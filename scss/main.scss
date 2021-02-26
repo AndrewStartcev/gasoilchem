@@ -1,0 +1,61 @@
+//####  Миксины и цвета #######################################################################################
+@import '#mixines';
+
+//#### Шрифт по умолчанию #####################################################################################
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+$fontFamily: 'Roboto', sans-serif;
+
+//#### Данные контайна #########################################################################################
+$maxWidth: 1920;
+$maxWidthContainer: 1170;
+$md1: $maxWidthContainer + 10;
+$md2: 767.98;
+
+//#### Обнуление, общие параметры ##############################################################################
+@import 'null';
+body {
+	font-size: 16px;
+	font-family: $fontFamily;
+	color: $black;
+	background: $white;
+	overflow-x: hidden;
+	&.lock {
+		overflow: hidden;
+	}
+}
+.page {
+	margin-bottom: 0;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-top: 0;
+	&.fixed {
+		margin-top: 200px;
+	}
+	&__main {
+		flex-grow: 1;
+	}
+
+}
+
+//#### Оcновная сетка #########################################################################################
+.container {
+	max-width: $maxWidthContainer + px;
+	width: 100%;
+	margin: 0 auto;
+	@media (max-width: $md1+px) {
+		max-width: 768px;
+		padding: 0 30px;
+	}
+	@media (max-width: $md2+px) {
+		max-width: 100%;
+		padding: 0 10px;
+	}
+}
+
+@import '_#ui.scss';             // Кнопки и другие плюшки
+@import 'template/_module.scss'; // Шаблоны блоков
+
+//#### Подключение страниц #####################################################################################
+@import 'homePage/_modules.scss'; // Главная страница

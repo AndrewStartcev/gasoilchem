@@ -1,0 +1,256 @@
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration { display: none; }
+input[type=search] {
+	border-width: 0px;
+	border: 0;
+	background: transparent;
+	outline: none;
+	border-radius: 0;
+	&:focus, &:hover, &:active {
+		outline: none;
+	}
+}
+input,
+button,
+textarea {
+	font-family: $fontFamily;
+	border-width: 0px;
+	border: none;
+	background: transparent;
+	outline: none;
+	border-radius: 0;
+}
+textarea {
+	resize: none;
+}
+input.error {
+	border-bottom: 1px solid $accent-3;
+	padding-right: 24px;
+	background: url('../img/icons/warning-filled.svg')center right / contain no-repeat;
+	background-size: 24px;
+	&:focus, &:hover, &.filled{
+		border-bottom: 1px solid $accent-3;
+	}
+}
+label.error {
+	margin-top: 3px;
+	@include body-3;
+	color: $accent-3;
+}
+
+.form {
+	&__textaria {
+		display: block;
+		width: 100%;
+		min-height: 120px;
+		padding: 12px 0px 14px;
+		border-bottom: 1px solid #DFDFDF;
+		font-size: 14px;
+		line-height: 22px;
+		color: $primary;
+		font-family: $fontFamily;
+		&::placeholder {
+			color: #B0B0B0;
+		}
+		&:focus, &:hover, &.filled{
+			border-bottom: 1px solid $primary;
+		}
+	}
+	&__checkbox {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	&__submit {
+		width: 100%;
+		@include body-bold;
+	}
+}
+.input {
+	position: relative;
+	width: 100%;
+	margin-bottom: 20px;
+	&__item {
+		width: 100%;
+		padding: 12px 0px 14px;
+		border-bottom: 1px solid #DFDFDF;
+		font-size: 14px;
+		line-height: 22px;
+		color: $primary;
+		background: transparent;
+		&:disabled {
+			opacity: 0.3;
+			&:hover {
+				border-bottom: 1px solid #DFDFDF;
+			}
+		}
+		&::placeholder {
+			color: #B0B0B0;
+		}
+		&:focus, &:hover, .filled {
+			border-bottom: 1px solid $primary;
+		}
+	}
+}
+.password {
+	position: relative;
+
+	&-control {
+		position: absolute;
+		top: 11px;
+		right: 6px;
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		background: url('../img/icons/view-pass.svg') 0 0 no-repeat;
+		opacity: 0.3;
+		transition: 0.3s;
+		&.view {
+			background: url('../img/icons/no-view-pass.svg') 0 0 no-repeat;
+		}
+		&:hover {
+			opacity: 1;
+		}
+	}
+}
+
+.textarea {
+	width: 100%;
+}
+.checkbox {
+	position: relative;
+	cursor: pointer;
+	&__input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0;
+		opacity: 0;
+		&:checked + .checkbox__label {
+			&::before {
+				background: $accent-2 url('../img/icons/checkbox-white.svg') center center / contain no-repeat;
+				background-size: 7px;
+				border: 1px solid $accent-2
+			}
+		}
+	}
+
+	&__label {
+		cursor: pointer;
+		position: relative;
+		user-select: none;
+		display: flex;
+		align-items: center;
+		@include body-3;
+		&::before {
+			cursor: pointer;
+			content: '';
+			flex: 0 0 15px;
+			align-self: flex-start;
+			display: block;
+			margin-right: 5px;
+			width: 15px;
+			height: 15px;
+			background: transparent center center / contain no-repeat;
+			background-size: 7px;
+			border: 1px solid $secondary;
+			border-radius: 2px;
+			transition: all 0.3s ease 0s;
+		}
+		a {
+			text-decoration-line: underline;
+			color: $accent-2;
+		}
+	}
+}
+.checkbox-right {
+	.checkbox {
+		&__label {
+			&::before {
+				order: 1;
+				margin-left: 10px;
+				justify-self: center;
+				align-self: center;
+			}
+		}
+	}
+}
+.radio {
+	cursor: pointer;
+	position: relative;
+	&__input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0;
+		opacity: 0;
+		&:checked + .radio__label {
+			&::before {
+				border: 1px solid $accent-2;
+			}
+			&::after {
+				transform: scale(1);
+			}
+		}
+	}
+
+	&__label {
+		cursor: pointer;
+		position: relative;
+		user-select: none;
+		display: flex;
+		align-items: center;
+		@include body-3;
+		&::before {
+			content: '';
+			cursor: pointer;
+			flex: 0 0 14px;
+			margin-top: 2px;
+			align-self: flex-start;
+			display: block;
+			margin-right: 5px;
+			width: 14px;
+			height: 14px;
+			background: transparent center center / contain no-repeat;
+			background-size: 7px;
+			border: 1px solid $secondary;
+			border-radius: 100px;
+			transition: all 0.3s ease 0s;
+		}
+		&::after {
+			cursor: pointer;
+			content: '';
+			display: block;
+			position: absolute;
+			flex-grow: 0;
+			top: 6px;
+			left: 4px;
+			width: 6px;
+			height: 6px;
+			border-radius: 100px;
+			background: $accent-2;
+			transition: all 0.3s ease 0s;
+			transform: scale(0);
+		}
+		a {
+			text-decoration-line: underline;
+			color: $accent-2;
+		}
+	}
+}
+
+
+

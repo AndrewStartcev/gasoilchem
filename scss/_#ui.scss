@@ -1,0 +1,21 @@
+.btn {
+	display: inline-flex;
+	padding: 9px 23px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+	background: $secondary;
+	text-align: center;
+	color: $white;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 136.69%;
+	text-transform: uppercase;
+	transition: 0.3s;
+	&:hover {
+		background: darken($secondary, 15)
+	}
+	&:active {
+		background: darken($secondary, 25)
+	}
+}
