@@ -38,7 +38,7 @@ $(document).ready(function() {
 // ############### Vanile JavaScript ###################
 
 // === Слайдер главного экрана на главной страницы =====
-const swiper = new Swiper('.home-slider', {
+const homeSwiper = new Swiper('.home-slider', {
   speed: 400,
 	loop: true,
 	autoplay: {

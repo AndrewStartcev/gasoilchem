@@ -1,0 +1,151 @@
+.home-news {
+	padding: 40px 0px;
+	&__body {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	&__all {
+		max-width: 180px;
+		margin-top: 30px;
+		justify-self: center;
+	}
+	&__title {
+		margin-bottom: 40px;
+		font-weight: bold;
+		font-size: 40px;
+		line-height: 136.19%;
+		text-align: center;
+	}
+	&__wrapper {
+		width: 100%;
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+	&__item {
+		width: 385px;
+		height: 403px;
+		overflow: hidden;
+		border-radius: 0px 0px 15px 15px;
+		background: $white-2;
+	}
+	&__cover {
+		width: 100%;
+		height: 184px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center center;
+		}
+	}
+	&__content {
+		padding: 20px;
+	}
+	&__name {
+		display: block;
+		font-weight: bold;
+		font-size: 15px;
+		line-height: 18px;
+		color: $primaty;
+		margin-bottom: 15px;
+		transition: 0.3s;
+		&:hover {
+			color: darken($primaty, 15);
+		}
+	}
+	&__discription {
+		font-weight: normal;
+		font-size: 15px;
+		line-height: 20px;
+		display: -webkit-box;
+		-webkit-line-clamp: 5;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+	&__footer {
+		padding-top: 20px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__date {
+		font-weight: bold;
+		font-size: 15px;
+		line-height: 136.19%;
+	}
+	&__link {
+		a {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 38px;
+			height: 38px;
+			background: $secondary;
+			border-radius: 100px;
+			transition: 0.3s;
+			span {
+				display: inline-flex;
+				width: 6px;
+				height: 6px;
+				background: $white;
+				border-radius: 100px;
+				margin-right: 3px;
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+			&:hover {
+				background: $primaty;
+			}
+		}
+	}
+}
+
+@media (max-width: $md1+px) {
+	.home-news {
+		&__item {
+			width: 343px;
+			height: 361px;
+			&:last-child {
+				display: none;
+			}
+		}
+		&__cover {
+			height: 164px;
+		}
+		&__content {
+			padding: 15px;
+		}
+		&__name {
+			font-size: 14px;
+			line-height: 16px;
+			margin-bottom: 10px;
+		}
+		&__discription {
+			font-size: 14px;
+			line-height: 16px;
+			-webkit-line-clamp: 5;
+		}
+		&__footer {
+			padding-top: 15px;
+		}
+	}
+}
+@media (max-width: $md2+px) {
+	.home-news {
+		&__wrapper {
+			justify-content: center;
+		}
+		&__item {
+			max-width: 343px;
+			width: auto;
+			height: 361px;
+			&:nth-child(2) {
+				display: none;
+			}
+		}
+	}
+}
