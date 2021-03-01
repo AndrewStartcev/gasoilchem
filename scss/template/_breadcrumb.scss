@@ -1,0 +1,44 @@
+.breadcrumb {
+	margin-top: 20px;
+	&__list {
+		display: flex;
+	}
+	li {
+		padding: 0 16px 0 10px;
+		position: relative;
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 50%;
+			width: 6px;
+			height: 6px;
+			border-radius: 100px;
+			transform: translateY(-50%);
+			background: #C4C4C4;
+		}
+		&:last-child {
+			padding-right: 0;
+			&::after {
+				display: none;
+			}
+		}
+	}
+	li > a {
+		font-size: 12px;
+		line-height: 19px;
+		color: $primaty;
+	}
+	.active {
+		font-size: 12px;
+		line-height: 19px;
+		color: #C4C4C4;
+		a {
+			font-size: 12px;
+			line-height: 19px;
+			color: #C4C4C4;
+		}
+	}
+}
+
