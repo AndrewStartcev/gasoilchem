@@ -2,6 +2,7 @@
 	margin-top: 20px;
 	&__list {
 		display: flex;
+		flex-wrap: wrap;
 	}
 	li {
 		padding: 0 16px 0 10px;
@@ -38,6 +39,23 @@
 			font-size: 12px;
 			line-height: 19px;
 			color: #C4C4C4;
+		}
+	}
+	@media (max-width: $md2+px) {
+		li > a {
+			font-size: 10px;
+			line-height: 12px;
+			color: $primaty;
+		}
+		.active {
+			font-size: 10px;
+			line-height: 12px;
+			color: #C4C4C4;
+			a {
+				font-size: 10px;
+				line-height: 12px;
+				color: #C4C4C4;
+			}
 		}
 	}
 }

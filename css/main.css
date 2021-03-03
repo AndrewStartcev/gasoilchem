@@ -1084,6 +1084,8 @@ body.lock {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .breadcrumb li {
@@ -1129,6 +1131,24 @@ body.lock {
   font-size: 12px;
   line-height: 19px;
   color: #C4C4C4;
+}
+
+@media (max-width: 767.98px) {
+  .breadcrumb li > a {
+    font-size: 10px;
+    line-height: 12px;
+    color: #083674;
+  }
+  .breadcrumb .active {
+    font-size: 10px;
+    line-height: 12px;
+    color: #C4C4C4;
+  }
+  .breadcrumb .active a {
+    font-size: 10px;
+    line-height: 12px;
+    color: #C4C4C4;
+  }
 }
 
 .home-slider {
@@ -1864,6 +1884,8 @@ body.lock {
   border: 4px solid #e8eff5;
   -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .category-product__cover {
@@ -1911,6 +1933,10 @@ body.lock {
   max-width: 100%;
   width: 100%;
   margin-top: 20px;
+}
+
+.category-product:hover {
+  border-color: #083674;
 }
 
 @media (max-width: 1225px) {
@@ -1963,5 +1989,173 @@ body.lock {
     max-width: 100%;
     width: 100%;
     margin-top: 20px;
+  }
+}
+
+.product {
+  padding-top: 30px;
+  padding-bottom: 90px;
+}
+
+.product__title {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 136.19%;
+}
+
+.product__date {
+  margin-top: 13px;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 136.19%;
+  color: #989898;
+}
+
+.product__content {
+  margin-top: 30px;
+  overflow-x: hidden;
+}
+
+.product__content img {
+  margin: 0 20px 30px 20px;
+  border-radius: 10px;
+}
+
+.product__content p {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 5px;
+}
+
+.product__content h2, .product__content h3, .product__content h4, .product__content h5, .product__content h6, .product__content h1 {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.product__content ul {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  -webkit-transform: translateX(30px);
+          transform: translateX(30px);
+}
+
+.product__content li {
+  list-style-type: disc;
+  margin-bottom: 15px;
+}
+
+.product__content table {
+  width: 950px;
+  margin: 50px auto;
+  border: 4px double black;
+  border-collapse: collapse;
+}
+
+.product__content th {
+  text-align: left;
+  background: #ccc;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.product__content td {
+  padding: 5px;
+  border: 1px solid black;
+}
+
+@media (max-width: 1225px) {
+  .product p {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 5px;
+  }
+  .product h2, .product h3, .product h4, .product h5, .product h6, .product h1 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .product img {
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    max-width: 100%;
+  }
+  .product ul {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    padding-left: 20px;
+  }
+  .product li {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+.news {
+  padding: 30px 0 90px;
+}
+
+.news__title {
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 136.19%;
+}
+
+.news__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.news .home-news__item {
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+.news .home-news__item:nth-child(3n) {
+  margin-right: 0;
+}
+
+@media (max-width: 1225px) {
+  .news .home-news__item {
+    width: 343px;
+    height: 361px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  .news .home-news__item:nth-child(3n) {
+    margin-right: 20px;
+  }
+  .news .home-news__item:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .news .home-news__item {
+    margin: 0 auto;
+    max-width: 343px;
+    width: auto;
+    height: 361px;
+    margin-bottom: 10px;
+  }
+  .news .home-news__item:nth-child(3n) {
+    margin: 0 auto;
+  }
+  .news .home-news__item:nth-child(2n) {
+    margin: 0 auto;
   }
 }
