@@ -85,6 +85,11 @@
 }
 @media (max-width: $md2+px) {
 	.product {
+		&__title {
+			font-weight: bold;
+			font-size: 30px;
+			line-height: 35%;
+		}
 		img {
 			margin: 0 auto 20px;
 			border-radius: 10px;
